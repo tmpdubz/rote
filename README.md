@@ -30,7 +30,3 @@ Expected output:
 [  INFO     ] Building new rote file...
 [  SUCCESS  ] Success!
 ```
-
-
-# TODO:
-- [ * ] write a build script that cats all the functions into a file before committing and publishing to GitHub
