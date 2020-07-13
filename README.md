@@ -8,7 +8,7 @@ mechanical or habitual repetition of something to be learned.
 
 For any bash scripts I write, I should just need to add:
 ```
-source <(curl <url of the result of my build here>)
+source <(curl https://raw.githubusercontent.com/tmpdubz/rote/master/rote)
 ```
 
 # To Build
@@ -33,4 +33,4 @@ Expected output:
 
 
 # TODO:
-- [ ] write a build script that cats all the functions into a file before committing and publishing to GitHub
+- [ * ] write a build script that cats all the functions into a file before committing and publishing to GitHub
