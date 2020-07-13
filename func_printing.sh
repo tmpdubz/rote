@@ -1,4 +1,11 @@
 #
+#
+# +--------------------------------+
+# |       PRINTING FUNCTIONS       |
+# +--------------------------------+
+#
+#
+#
 # Print info/success messages
 function print_info() {
     local INPUT=$1

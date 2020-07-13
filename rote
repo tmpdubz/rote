@@ -88,6 +88,13 @@ BG_HI_WHITE='\033[0;107m'   # WHITE#
 #
 #
 #
+#
+# +--------------------------------+
+# |       PRINTING FUNCTIONS       |
+# +--------------------------------+
+#
+#
+#
 # Print info/success messages
 function print_info() {
     local INPUT=$1
