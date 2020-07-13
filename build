@@ -1,0 +1,70 @@
+#!/bin/bash
+
+set -eou pipefail
+
+# Get the root directory
+ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+OUTFILE="rote"
+
+# Might as well use it here as well
+source ${ROOT}/def*
+source ${ROOT}/func*
+
+# Turn listings of variable definitions and function defintions files into 
+DEF_LIST=$(IFS=$'\n'; arr=( $(echo -e "$(ls ${ROOT} | grep def)") ); for i in ${arr[@]} ; do echo $i ; done)
+FUNC_LIST=$(IFS=$'\n'; arr=( $(echo -e "$(ls ${ROOT} | grep func)") ); for i in ${arr[@]} ; do echo $i ; done)
+#
+#
+# Remove previous rote file when rebuilding
+function clean() {
+    print_info "Removing existing artifact..."
+    rm -rf ${ROOT}/rote
+    print_success "Success!"
+}
+
+# It's what the cat wrote.
+# A function that turns cats everything into a big ol'
+# dirty bash file I can source or cat into other bash scripts
+# when I don't feel like re-implementing common things
+function cat_rote() {
+    print_info "Building new rote file..."
+    echo "#!/bin/bash" > rote
+    
+    # HEADER - DEFS
+    cat <<-"EOF" >> ${ROOT}/${OUTFILE}
+		#
+		#
+		# +--------------------------------+
+		# |     VARIABLE DEFINITIONS       |
+		# +--------------------------------+
+		#
+		#
+	EOF
+    
+	# append all variable definitions
+    for def in ${DEF_LIST[@]}
+    do
+        cat ${def} >> rote
+    done
+    
+	# HEADER - FUNCS
+    cat <<-"EOF" >> ${ROOT}/${OUTFILE}
+		#
+		#
+		# +--------------------------------+
+		# |     FUNCTION DEFINITIONS       |
+		# +--------------------------------+
+		#
+		#
+	EOF
+    # append all function definitions
+    for funcs in ${FUNC_LIST[@]}
+    do
+        cat ${funcs} >> rote
+    done
+    chmod +x rote
+    print_success "Success!"
+}
+
+clean
+cat_rote
