@@ -13,8 +13,8 @@ source <(curl https://raw.githubusercontent.com/tmpdubz/rote/master/rote)
 
 # To Build
 All you need to do is call the build script and it will:
-* The old artifact is cleaned out
-* A new file is generated in the following order
+* Clean out the old artifact
+* Generate a new file in this orde:
     * Crunchbang!
     * Variable header
     * All variable definitions (files that start with def*)
