@@ -1,10 +1,7 @@
 #
-#
 # +--------------------------------+
 # |       PRINTING FUNCTIONS       |
 # +--------------------------------+
-#
-#
 #
 # Print info/success messages
 function print_info() {

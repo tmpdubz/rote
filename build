@@ -33,11 +33,9 @@ function cat_rote() {
     # HEADER - DEFS
     cat <<-"EOF" >> ${ROOT}/${OUTFILE}
 		#
-		#
-		# +--------------------------------+
-		# |     VARIABLE DEFINITIONS       |
-		# +--------------------------------+
-		#
+		# ======================================
+		#         VARIABLE DEFINITIONS       
+		# ======================================
 		#
 	EOF
     
@@ -50,11 +48,9 @@ function cat_rote() {
 	# HEADER - FUNCS
     cat <<-"EOF" >> ${ROOT}/${OUTFILE}
 		#
-		#
-		# +--------------------------------+
-		# |     FUNCTION DEFINITIONS       |
-		# +--------------------------------+
-		#
+		# ======================================
+		#         FUNCTION DEFINITIONS       
+		# ======================================
 		#
 	EOF
     # append all function definitions
