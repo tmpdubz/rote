@@ -102,15 +102,11 @@ function print_success() {
     printf "${GREEN}[  SUCCESS  ] ${INPUT}${COLOUR_OFF}\n"
 }
 #
-#
-#
 # Print warning messages
 function print_warn() {
     local INPUT=$1
     printf "${YELLOW}[  WARNING  ] ${INPUT}${COLOUR_OFF}\n"
 }
-#
-#
 #
 # Print error messages
 function print_error() {
